@@ -21,19 +21,19 @@ describe('Add a songwriter successfully', () => {
 
         });
 
-    it('Successfully Submit LOD App To Non-US Entity - IMRO ', () => {
+    it('Successfully Submit LOD App To US Entity - ASCAP ', () => {
         //Begin LOD funnel workflow
         cy.visit('/songwriters/#add');
         cy.findByTestId('show-lod-pros-button')
         .click();
         cy.findByTestId('lod-pro-selections')
-        .select('IMRO', {force:true});
+        .select('ASCAP', {force:true});
         cy.findByTestId('lod-pro-selections')
-        .should('have.value', 'IMRO');
+        .should('have.value', 'ASCAP');
         cy.findByTestId('continue-to-form')
         .click();
         
-        /////LOD Form - IMRO///////
+        /////LOD Form - ASCAP///////
         cy.url()
         .should('contains', '/songwriters/#add/lod-form');
 
@@ -41,27 +41,17 @@ describe('Add a songwriter successfully', () => {
         .should('be.visible')
         .type('Frank');
 
-        cy.findByTestId('middle-name')
-        .should('be.visible');
-
         cy.findByTestId('last-name')
         .should('be.visible')
-        .type('Ikiseh');
+        .type('Ahrold');
 
         cy.findByTestId('id_email')
         .should('be.visible')
-        .type(id +'imro@songtrust.com');
+        .type(id +'@songtrust.com');
 
         cy.findByTestId('id_writer_id')
         .should('be.visible')
-        .type('01047205098');
-
-        cy.findByTestId('lod-us-representation')
-        .should('be.visible')
-        .select('ASCAP', {force: true});
-
-        cy.findByTestId('pubco_no')
-        .should('be.visible');
+        .type('88515642');
 
         cy.findByTestId('pubco_yes')
         .should('be.visible')
@@ -75,44 +65,53 @@ describe('Add a songwriter successfully', () => {
         .should('be.visible')
         .select('ASCAP', {force: true});
 
+        cy.findByTestId('publishing_company_pro')
+        .should('be.visible')
+        .should('have.value', 'ASCAP');
+
         cy.findByTestId('id_publisher_id')
         .should('be.visible')
         .type('697403510');
 
-        //Signature Modal
+        //signature panel 
+        cy.findByTestId('signature_panel')
+        .should('be.visible')
+        .click();
         cy.get('.type-toggle')
         .should('be.visible')
-        .click();
-
+        .click(); 
         cy.get('.typed-signature-field')
         .should('be.visible')
-        .type('Frank Ikiseh');
+        .click();
+        cy.get('.typed-signature-field')
+        .should('be.visible')
+        .type('Frank Ahrold');
 
-        //Submit Form - IMRO
         cy.get('.standard')
         .should('be.visible')
-        .click();
-        cy.wait('@lod').should((xhr) => {
-          expect(xhr.status, 'successfull POST').to.equal(201);
-        })
+        cy.get('.standard')
+        .click()
+            cy.wait('@lod').should((xhr) => {
+            expect(xhr.status, 'successfull POST').to.equal(201);
+            });
 
-        //Success modal - NOT REACHABLE DUE TO CYPRESS BUG
-        cy.findByRole('link', {name: 'Back to Songwriters'})
-        .should('be.visible')
-        .click();
+        //Thank you modal - NOT ACCESSIBLE DUE TO CYPRESS BUG
+        //cy.get('.back')
+        //.should('be.visible')
+        //cy.get('.back')
+        //.click();
 
         //Back to Songwriters Main Page
-        cy.url()
-        .should('contains', '/songwriters/');
+        //cy.url()
+        //.should('contains', '/songwriters/');
 
-        cy.get('.songwriter:nth-child(1)')
-        .should('exist');
-
-        cy.get('.songwriter:nth-child(1) .writer-email')
-        .should('contain', id)
-        .end();
+        //cy.get('.songwriter:nth-child(1)')
+        //.should('exist');
         
-
+        //cy.get('.songwriter:nth-child(1) .writer-email')
+        //.should('contain', id)
+        //.end(); //add email ID assertion
+        
     });
 
     
