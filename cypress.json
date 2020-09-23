@@ -5,7 +5,7 @@
   "experimentalSourceRewriting": false,
   "defaultCommandTimeout": 10000,
   "requestTimeout": 10000,
-  "integrationFolder": "/Users/dknott/Desktop/Songtrust-E2E-master/cypress/integration/Publishing App/Smoke Test/",
+  "integrationFolder": "../cypress-8507/cypress/integration/Publishing App/Smoke Test/",
   "retries": {
     "runMode": 5,
     "openMode": 5
