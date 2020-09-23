@@ -1,4 +1,4 @@
-# Songtrust End to End testing framework
+# Cypress End to End testing framework
 Songtrust Cypress Test Engine
 
 # Installing Locally
