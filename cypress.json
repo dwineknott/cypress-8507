@@ -1,7 +1,7 @@
 {
   "projectId": "",
   "chromeWebSecurity": false,
-  "baseUrl": "https://qa.songtrust.com",
+  "baseUrl": "https://app.songtrust.com",
   "experimentalSourceRewriting": false,
   "defaultCommandTimeout": 10000,
   "requestTimeout": 10000,
