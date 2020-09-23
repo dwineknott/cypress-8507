@@ -1,0 +1,26 @@
+{
+  "name": "cypress-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.11.4",
+    "@babel/preset-env": "^7.11.0",
+    "@cypress/webpack-preprocessor": "^5.4.5",
+    "@testing-library/cypress": "^6.0.0",
+    "@testing-library/dom": "^7.22.1",
+    "@types/node": "^14.0.27",
+    "babel-loader": "^8.1.0",
+    "cypress": "^5.2.0",
+    "cypress-file-upload": "^4.0.7",
+    "ts-loader": "^8.0.3",
+    "typescript": "^3.9.7",
+    "webpack": "^4.44.1"
+  },
+  "dependencies": {}
+}

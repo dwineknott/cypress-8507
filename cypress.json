@@ -1,0 +1,16 @@
+{
+  "projectId": "d56c2n",
+  "chromeWebSecurity": false,
+  "baseUrl": "https://qa.songtrust.com",
+  "experimentalSourceRewriting": false,
+  "defaultCommandTimeout": 10000,
+  "requestTimeout": 10000,
+  "integrationFolder": "/Users/dknott/Desktop/Songtrust-E2E/cypress/integration/Publishing App/Smoke Test/",
+  "retries": {
+    "runMode": 5,
+    "openMode": 5
+  }
+}
+
+
+  
