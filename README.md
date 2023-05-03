@@ -1,11 +1,13 @@
 # Cypress End to End testing framework
-Songtrust Cypress Test Engine
+Cypress Test Engine
 
-# Installing Locally
+# Installing Locally With Desired Plugins
 
 1. Install [node.js](https://nodejs.org/en/download/)
 2. clone repo to local machine
-3. in the terminal, cd into desired project folder.  Example `cd Songtrust-E2E`
+3. Install Typescript
+4. Install Cypress Testing Library
+3. in the terminal, cd into desired project folder.
 4. `npm install cypress --save-dev`
 
 # Running Cypress
